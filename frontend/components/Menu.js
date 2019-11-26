@@ -50,28 +50,11 @@ class Menu extends Component {
     });
 
     return (
-      <div>
-        <Link href="/">
-          <a style={linkStyle}>Home</a>
-        </Link>
-        {menuItems}
-
-        {token ? (
-          <button
-            type="button"
-            className="pointer black"
-            onClick={() => {
-              localStorage.removeItem(Config.AUTH_TOKEN);
-              Router.push('/login');
-            }}
-          >
-            Logout {username}
-          </button>
-        ) : (
-          <Link href="/login">
-            <a style={linkStyle}>Login</a>
-          </Link>
-        )}
+      <div className="header">
+        <h1>Wynn Digital</h1>
+        <nav className="navigation">
+          {menuItems}
+        </nav>
       </div>
     );
   }

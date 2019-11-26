@@ -103,46 +103,15 @@ class Index extends Component {
     return (
       <Layout>
         <Menu menu={headerMenu} />
-        <img
-          src="/static/images/wordpress-plus-react-header.png"
-          width="815"
-          alt="logo"
-          style={headerImageStyle}
-        />
-        <h1>{page.title.rendered}</h1>
+        {/* <h1>{page.title.rendered}</h1> */}
         <div
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: page.content.rendered,
           }}
         />
-        <h2>Posts</h2>
+        <h2>Posts - Wynn Digital</h2>
         {fposts}
-        <h2>Pages</h2>
-        {fpages}
-        {id ? (
-          <div>
-            <h2>You Are Logged In</h2>
-            <p>
-              Your user ID is <span>{id}</span>, retrieved via an authenticated
-              API query.
-            </p>
-          </div>
-        ) : (
-          <div>
-            <h2>You Are Not Logged In</h2>
-            <p>
-              The frontend is not making authenticated API requests.{' '}
-              <a href="/login">Log in.</a>
-            </p>
-          </div>
-        )}
-        <h2>Where You're At</h2>
-        <p>
-          You are looking at the REST API-powered React frontend. Be sure to
-          also check out the{' '}
-          <a href="http://localhost:3001/">GraphQL-powered frontend</a>.
-        </p>
+        
       </Layout>
     );
   }

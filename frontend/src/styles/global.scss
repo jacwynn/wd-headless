@@ -1,11 +1,14 @@
 
 body {
-    font: $theme-font;
-    background-color: $themeColor-Light;
-    margin: 0;
-    padding: 0;
-    h1,
-    h2 {
-      color: $themeColor-Dark;
-    }
-  }
+  font-family: $theme-body-font;
+  background-color: $themeColor-Light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $theme-header-font;
+  text-transform: uppercase;
+}

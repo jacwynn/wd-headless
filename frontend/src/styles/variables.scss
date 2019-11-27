@@ -1,12 +1,13 @@
 // Font
 $theme-font: 100% verdana, sans-serif;
-
-//Theme Colors
-$themeColor-Light: #fff;
-$themeColor-Dark: #000;
+$theme-body-font: 'Cardo', sans-serif;
+$theme-header-font: 'Oswald', sans-serif;
 
 //Website Color Palette
 $wd-black: #252525;
 $wd-white: #FFFFFF;
 $wd-off-white: #F7F0F0;
 $wd-orange: #FA5F1A;
+
+$themeColor-Light: $wd-off-white;
+$themeColor-Dark: $wd-black;

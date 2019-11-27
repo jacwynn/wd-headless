@@ -19,3 +19,14 @@ h2 {font-size: 1.5rem;}
 h3 {font-size: 1.17rem;}
 h4 {font-size: 1rem;}
 h5 {font-size: 0.83rem;}
+
+a {
+  font-family: $theme-header-font;
+  text-decoration: none;
+  color: $wd-orange;
+  transition: all .25s;
+
+  &:hover {
+    color: shade($wd-orange, 50%);
+  }
+}

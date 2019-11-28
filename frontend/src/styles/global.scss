@@ -30,3 +30,14 @@ a {
     color: shade($wd-orange, 50%);
   }
 }
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.flex-default {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

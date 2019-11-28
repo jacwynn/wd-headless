@@ -1,6 +1,158 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 1rem;
     background-color: $wd-white;
+    border-bottom: 2px solid $wd-orange;
+
+    &.mobile-menu-active {
+        height: auto;
+    }
+}
+
+.navigation {
+
+    a:not(:last-child) {
+        margin-right: 2.5rem;
+    }
+}
+
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 1.875rem;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
+//Styles for Hamburger Menu Animation
+#nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
+    width: 3.75rem;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+  }
+  
+  #nav-icon1 span, #nav-icon3 span, #nav-icon4 span {
+    display: block;
+    position: absolute;
+    height: 0.1875rem;
+    width: 100%;
+    background: black;
+    border-radius: 0.5625rem;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+  
+  #nav-icon1 span:nth-child(1) {
+    top: 0px;
+  }
+  
+  #nav-icon1 span:nth-child(2) {
+    top: 1.125rem;
+  }
+  
+  #nav-icon1 span:nth-child(3) {
+    top: 2.25rem;
+  }
+  
+  #nav-icon1.open span:nth-child(1) {
+    top: 1.125rem;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  
+  #nav-icon1.open span:nth-child(2) {
+    opacity: 0;
+    left: -3.75rem;
+  }
+  
+  #nav-icon1.open span:nth-child(3) {
+    top: 1.125rem;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+
+
+// Media Queries - Desktop First Approach for Header
+@media screen and (max-width: 767px) {
+    .header {
+        padding: 2rem 0;
+
+        &.mobile-menu-active {
+            padding-bottom: 0;
+        }
+    }
+
+    .logo {
+        float: right;
+        margin-right: 1.5rem;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: flex;
+        float: left;
+        margin-left: 1.5rem;
+    }
+
+    .header > .wrap {
+        display: block;
+    }
+
+    .navigation {
+
+        a,
+        &.show {
+            display: block;
+            padding: 1.5rem 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        &.show {
+            padding: 3.5rem 0 0;
+        }
+
+        a:first-child {
+            border-top: 1px solid lightgray;
+        }
+
+        a:not(:last-child) {
+            margin: 0;
+            border-bottom: 1px solid lightgray;
+        }
+    }
+
+    .clearfix:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
 }

@@ -1,11 +1,43 @@
 
 body {
-    font: $theme-font;
-    background-color: $themeColor-Light;
-    margin: 0;
-    padding: 0;
-    h1,
-    h2 {
-      color: $themeColor-Dark;
-    }
+  font-family: $theme-body-font;
+  font-size: 16px;
+  background-color: $themeColor-Light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $theme-header-font;
+  text-transform: uppercase;
+}
+
+h1 {font-size: 2rem;}
+h2 {font-size: 1.5rem;}
+h3 {font-size: 1.17rem;}
+h4 {font-size: 1rem;}
+h5 {font-size: 0.83rem;}
+
+a {
+  font-family: $theme-header-font;
+  text-decoration: none;
+  color: $wd-orange;
+  transition: all .25s;
+
+  &:hover {
+    color: shade($wd-orange, 50%);
   }
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.flex-default {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

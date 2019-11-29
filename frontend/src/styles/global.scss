@@ -23,11 +23,11 @@ h5 {font-size: 0.83rem;}
 a {
   font-family: $theme-header-font;
   text-decoration: none;
-  color: $wd-orange;
+  color: $wd-primary-color;
   transition: all .25s;
 
   &:hover {
-    color: shade($wd-orange, 50%);
+    color: shade($wd-primary-color, 50%);
   }
 }
 

@@ -1,0 +1,28 @@
+.hero-image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/static/images/wd-hero-image.jpg');
+    background-size: cover;
+    min-height: 37.5rem;
+}
+
+.hero-image-text {
+    text-align: center;
+    z-index: 200;
+}
+
+.overlay {
+    position: absolute;
+    top: 4.125rem;
+    left: 0;
+    width: 100%;
+    min-height: 37.5rem;
+    background-color: black;
+    opacity: 0.6;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        top: 6.125rem;
+    }
+}

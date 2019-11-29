@@ -104,7 +104,13 @@ class Index extends Component {
       <Layout>
         <Menu menu={headerMenu} />
         <section className="hero-image-section">
-          <h1>Hero Image Section</h1>
+          <div class="overlay"></div>
+          <div className="hero-image-text">
+            <h1>Need Website Hosting and Support?</h1>
+            <p>Working with us will free up time for you to take on bigger iniatives</p>
+            <p>Allow us to do what we are good at, so that you can do whatever it is your good at.</p>
+            <button>Request Free Consultation</button>
+          </div>
         </section>
         <section className="services-section">
           <h1>Services Section</h1>

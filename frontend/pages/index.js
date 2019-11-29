@@ -103,12 +103,23 @@ class Index extends Component {
     return (
       <Layout>
         <Menu menu={headerMenu} />
-        {/* <h1>{page.title.rendered}</h1> */}
-        <div
+        <section className="hero-image-section">
+          <h1>Hero Image Section</h1>
+        </section>
+        <section className="services-section">
+          <h1>Services Section</h1>
+        </section>
+        <section className="about-us-section">
+          <h1>About Us Section</h1>
+        </section>
+        <section className="contact-section">
+          <h1>Contact Section</h1>
+        </section>
+        {/* <div
           dangerouslySetInnerHTML={{
             __html: page.content.rendered,
           }}
-        />
+        /> */}
         <h2>Posts - Wynn Digital</h2>
         {fposts}
         

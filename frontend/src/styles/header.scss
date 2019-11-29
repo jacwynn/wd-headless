@@ -1,4 +1,6 @@
 .header {
+    position: fixed;
+    width: 100%;
     padding: 1rem;
     background-color: $wd-white;
     border-bottom: 2px solid $wd-primary-color;
@@ -99,7 +101,7 @@
 
 
 // Media Queries - Desktop First Approach for Header
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .header {
         padding: 2rem 0;
 

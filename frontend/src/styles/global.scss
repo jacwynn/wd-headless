@@ -41,3 +41,11 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+
+section:first-of-type {
+  padding-top: 4.125rem; //added padding due to fixed header
+
+  @media screen and (max-width: 768px) {
+    padding-top: 6.125rem //added padding due to fixed header
+  }
+}

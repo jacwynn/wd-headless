@@ -27,7 +27,22 @@ a {
   transition: all .25s;
 
   &:hover {
-    color: shade($wd-primary-color, 50%);
+    color: $wd-accent-color-1;
+  }
+}
+
+button {
+  font-family: $theme-header-font;
+  font-size: 1.125rem;
+  background-color: $wd-primary-color;
+  color: $wd-white;
+  border: none;
+  padding: 0.5rem 2rem;
+  transition: all 0.25s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $wd-accent-color-1;
   }
 }
 

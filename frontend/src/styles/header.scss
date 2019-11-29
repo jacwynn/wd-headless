@@ -4,7 +4,7 @@
     padding: 1rem;
     background-color: $wd-white;
     border-bottom: 2px solid $wd-primary-color;
-    z-index: 100;
+    z-index: 300;
 
     &.mobile-menu-active {
         height: auto;
@@ -29,6 +29,10 @@
 
     &:focus {
         outline: none;
+    }
+
+    &:hover {
+        background-color: transparent;
     }
 }
 

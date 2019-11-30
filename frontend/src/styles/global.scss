@@ -68,3 +68,8 @@ section:first-of-type {
     padding-top: 6.125rem //added padding due to fixed header
   }
 }
+
+::selection {
+  background-color: $wd-primary-color;
+  color: white;
+}

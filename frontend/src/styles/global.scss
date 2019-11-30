@@ -57,6 +57,10 @@ button {
   align-items: center;
 }
 
+section:not(:first-of-type) {
+  padding: 3.5rem 0;
+}
+
 section:first-of-type {
   padding-top: 4.125rem; //added padding due to fixed header
 

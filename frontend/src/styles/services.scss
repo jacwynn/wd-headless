@@ -1,0 +1,53 @@
+.services-section {
+
+    h2 {
+        text-align: center;
+        color: $wd-primary-color;
+    }
+
+    hr {
+        width: 4.375rem;
+        height: 0.3125rem;
+        background-color: $wd-accent-color-1;
+        margin-top: 2.5rem;
+    }
+}
+
+.services {
+    display: flex;
+    margin-top: 1.5rem;
+
+    h3 {
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+
+    p {
+        line-height: 1.35;
+    }
+
+    i {
+        display: block;
+        text-align: center;
+        font-size: 3.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .service {
+        width: 33%;
+
+        &.middle {
+            padding: 0 3rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 75%;
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}

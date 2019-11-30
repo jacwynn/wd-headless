@@ -7,6 +7,7 @@ import PageWrapper from '../components/PageWrapper';
 import Menu from '../components/Menu';
 import HeroImage from '../components/HeroImage';
 import Services from '../components/Services';
+import About from '../components/About';
 import Config from '../config';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
@@ -107,9 +108,7 @@ class Index extends Component {
         <Menu menu={headerMenu} />
         <HeroImage />
         <Services />
-        <section className="about-us-section">
-          <h1>About Us Section</h1>
-        </section>
+        <About />
         <section className="contact-section">
           <h1>Contact Section</h1>
         </section>

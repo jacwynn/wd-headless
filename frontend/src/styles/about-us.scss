@@ -1,0 +1,40 @@
+.about-us-section {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: url('/static/images/about-us.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    min-height: 15rem;
+    padding-top: 4.125rem;
+
+    h2,
+    & > .wrap {
+        position: relative;
+        text-align: center;
+        color: $wd-white;
+        z-index: 300;
+    }
+
+    h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    & > .wrap {
+        text-align: left;
+
+        @media screen and (max-width: 768px) {
+            width: 75%;
+        }
+    }
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    .overlay {
+        min-height: 22rem;
+        top: 0;
+    }
+}

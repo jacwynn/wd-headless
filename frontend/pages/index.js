@@ -12,11 +12,6 @@ import Config from '../config';
 
 const wp = new WPAPI({ endpoint: Config.apiUrl });
 
-const headerImageStyle = {
-  marginTop: 50,
-  marginBottom: 50,
-};
-
 const tokenExpired = () => {
   if (process.browser) {
     localStorage.removeItem(Config.AUTH_TOKEN);
@@ -32,7 +27,7 @@ class Index extends Component {
 
   static async getInitialProps() {
     try {
-      const [page, posts, pages] = await Promise.all([
+      const [page, posts, pages, media] = await Promise.all([
         wp
           .pages()
           .slug('welcome')
@@ -42,9 +37,10 @@ class Index extends Component {
           }),
         wp.posts().embed(),
         wp.pages().embed(),
+        wp.media().embed()
       ]);
 
-      return { page, posts, pages };
+      return { page, posts, pages, media };
     } catch (err) {
       if (err.data.status === 403) {
         tokenExpired();
@@ -74,7 +70,7 @@ class Index extends Component {
 
   render() {
     const { id } = this.state;
-    const { posts, pages, headerMenu, page } = this.props;
+    const { posts, pages, headerMenu, page, media } = this.props;
     const fposts = posts.map(post => {
       return (
         <ul key={post.slug}>
@@ -109,6 +105,13 @@ class Index extends Component {
         <HeroImage />
         <Services />
         <About />
+        {/* <BlogPosts />         */}
+        { console.log(headerMenu) }
+        <section className="posts-section">
+          <h2>Posts</h2>
+          {fposts}
+          {/* {console.log(posts)} */}
+        </section>
         <section className="contact-section">
           <h1>Contact Section</h1>
         </section>
@@ -117,9 +120,6 @@ class Index extends Component {
             __html: page.content.rendered,
           }}
         /> */}
-        <h2>Posts - Wynn Digital</h2>
-        {fposts}
-        
       </Layout>
     );
   }

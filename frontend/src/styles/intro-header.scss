@@ -1,0 +1,25 @@
+.intro-header-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: $wd-light-gray;
+    min-height: 25rem;
+    padding-top: 4.125rem;
+    border-bottom: 2px solid lightgray;
+}
+
+.intro-header {
+    text-align: center;
+
+    h1 {
+        font-size: 2.75rem;
+        margin-bottom: 0.35rem;
+    }
+
+    img {
+        width: 10rem;
+        border-radius: 50%;
+        border: 0.1875rem solid $wd-primary-color;
+    }
+}

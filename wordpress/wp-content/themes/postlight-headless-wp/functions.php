@@ -8,6 +8,9 @@
  * @package  Postlight_Headless_WP
  */
 
+ //Featured Image Support
+add_theme_support( 'post-thumbnails' );
+
 // Frontend origin.
 require_once 'inc/frontend-origin.php';
 

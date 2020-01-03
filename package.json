@@ -7,6 +7,8 @@
   "private": true,
   "scripts": {
     "postinstall": "docker-compose run --rm wp-headless install_wordpress",
-    "start": "docker-compose up"
+    "start": "docker-compose up",
+    "frontend": "gcloud beta app deploy --no-cache frontend/app.yaml",
+    "wordpress": "gcloud app deploy wordpress/app.yaml"
   }
 }

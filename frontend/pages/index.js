@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
 import Menu from '../components/Menu';
 import HeroImage from '../components/HeroImage';
+import IntroHeader from '../components/IntroHeader';
 import Services from '../components/Services';
 import About from '../components/About';
 import Config from '../config';
@@ -102,11 +103,11 @@ class Index extends Component {
     return (
       <Layout>
         <Menu menu={headerMenu} />
-        <HeroImage />
+        <IntroHeader />
+        {/* <HeroImage /> */}
         <Services />
         <About />
         {/* <BlogPosts />         */}
-        { console.log(headerMenu) }
         <section className="posts-section">
           <h2>Posts</h2>
           {fposts}

@@ -1,21 +1,47 @@
 .services-section {
+    background-color: $wd-white;
+    max-width: 960px;
+    margin: 0 auto;
+    @media screen and (max-width: 960px) {
+        max-width: 540px;
+    }
+
+    @media screen and (max-width: 540px) {
+        max-width: 340px;
+    }
 
     h2 {
         text-align: center;
         color: $wd-primary-color;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        line-height: 1.3;
     }
 
     hr {
         width: 4.375rem;
         height: 0.3125rem;
         background-color: $wd-accent-color-1;
-        margin-top: 2.5rem;
+        margin: 2.5rem auto;
     }
 }
 
-#services {
-    padding-top: 6rem;
-    margin-top: -3.5rem;
+.social-media-icons {
+    display: flex;
+    justify-content: space-between;
+
+    i {
+        font-size: 2.25rem;
+    }
+
+    .facebook:hover {color: #1877F2;}
+    .instagram:hover {color: #E4405F;}
+    .linkedin:hover {color: #0077B5;}
+    .twitter:hover {color: #1DA1F2;}
+    .github:hover {color: #181717}
 }
 
 .services {

@@ -5,7 +5,7 @@ const Services = () => (
         <h2>What we can do for you</h2>
         <div className="services wrap">
         <div className="service">
-            <i class="fa fa-cloud"></i>
+            <i className="fa fa-cloud"></i>
             <h3>Cloud Hosting</h3>
             <p>Instead of hosting your website on one server, host your site across a series of links servers. This guarantee your site is always up.</p>
             <a href="/page/cloud-hosting/">Learn More</a>

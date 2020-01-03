@@ -72,7 +72,7 @@ class Menu extends Component {
         <div className="wrap flex-default clearfix">
           <HamburgerMenu menu={menuItems} animateMenu={animateMenu} click={this.btnClickToggle} />
           <h1 className="logo">
-            <Link as="/">Wynn Digital</Link>
+            <Link as="/" href="/">Wynn Digital</Link>
           </h1>
           <nav className={`navigation ${showMenu}`}>
             {menuItems}

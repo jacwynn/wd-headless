@@ -1,13 +1,17 @@
 .header {
     position: fixed;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 0;
     background-color: $wd-white;
     border-bottom: 2px solid $wd-primary-color;
     z-index: 300;
 
     &.mobile-menu-active {
         height: auto;
+    }
+
+    & > .wrap {
+        padding: 0 1.5em;
     }
 }
 

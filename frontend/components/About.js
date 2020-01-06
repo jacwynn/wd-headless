@@ -1,5 +1,3 @@
-import React, { Component } from 'react';
-
 const About = () => (
     <section className="about-us-section" id="about">
         <div className="overlay"></div>

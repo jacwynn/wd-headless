@@ -29,6 +29,12 @@ app
       app.render(req, res, actualPage, queryParams);
     });
 
+    server.get('/project/:slug', cors(corsOptions), (req, res) => {
+      const actualPage = '/project';
+      const queryParams = { slug: req.params.slug, apiRoute: 'project' };
+      app.render(req, res, actualPage, queryParams);
+    });
+
     server.get('/category/:slug', cors(corsOptions), (req, res) => {
       const actualPage = '/category';
       const queryParams = { slug: req.params.slug };

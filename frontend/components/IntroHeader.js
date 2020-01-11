@@ -6,7 +6,7 @@ const IntroHeader = () => (
             <h1>Jac Wynn Jr.</h1>
             <h3>SFCC Front End Developer</h3>
             {/*TODO:: Clean up styles for scroll down button */}
-            <div id="section10" class="demo">
+            <div id="section10" className="demo">
                 <a href="#services"><span></span></a>
             </div>
         </div> 

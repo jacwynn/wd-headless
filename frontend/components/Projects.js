@@ -1,9 +1,10 @@
 const Projects = ({projects}) => {
 
-    const fprojects = projects.map(project => {
+    const fprojects = projects.map((project, index) => {
         return (
-            <li>
-                <a href="#">
+            <li key={index}>
+                {console.log(project)}
+                <a href={project.link}>
                     <img src={project.better_featured_image.source_url} />
                     <h4>{project.title.rendered}</h4>
                 </a>

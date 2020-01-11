@@ -1,5 +1,6 @@
 const path = require('path');
 const glob = require('glob');
+const withOffline = require('next-offline')
 
 module.exports = {
   webpack: config => {

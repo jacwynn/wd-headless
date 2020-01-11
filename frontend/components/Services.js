@@ -30,19 +30,19 @@ const Services = () => (
         <hr />
         <ul className="social-media-icons">
             <li>
-                <a href="https://www.facebook.com/jacquin.wynn.3" target="_blank" class="facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/jacquin.wynn.3" target="_blank" className="facebook"><i className="fa fa-facebook-square" aria-hidden="true"></i></a>
             </li>
             <li>
-                <a href="https://www.instagram.com/jacwynnjr/" target="_blank" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/jacwynnjr/" target="_blank" className="instagram"><i className="fa fa-instagram" aria-hidden="true"></i></a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/in/jacwynn/" target="_blank" class="linkedin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/jacwynn/" target="_blank" className="linkedin"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
             </li>
             <li>
-                <a href="https://twitter.com/wynndigital" target="_blank" class="twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/wynndigital" target="_blank" className="twitter"><i className="fa fa-twitter-square" aria-hidden="true"></i></a>
             </li>
             <li>
-                <a href="https://github.com/jacwynn" target="_blank" class="github"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+                <a href="https://github.com/jacwynn" target="_blank" className="github"><i className="fa fa-github-square" aria-hidden="true"></i></a>
             </li>
         </ul>
     </section>

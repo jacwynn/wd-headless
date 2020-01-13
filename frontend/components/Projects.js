@@ -1,14 +1,15 @@
+import Link from 'next/link';
+
 const Projects = ({projects}) => {
 
     const fprojects = projects.map((project, index) => {
         return (
-            <li key={index}>
-                {console.log(project)}
-                <a href={project.link}>
+            <Link href={`/project/${project.slug}`}>
+                <li key={index}>
                     <img src={project.better_featured_image.source_url} />
                     <h4>{project.title.rendered}</h4>
-                </a>
-            </li>
+                </li>
+            </Link>
         )
     })
 

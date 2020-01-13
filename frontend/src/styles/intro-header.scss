@@ -7,6 +7,15 @@
     min-height: 25rem;
     padding-top: 4.125rem;
     border-bottom: 2px solid lightgray;
+
+    &__project {
+      min-height: 15rem;
+      flex-direction: column;
+
+      & > button {
+        margin-top: 1.5rem;
+      }
+    }
 }
 
 .intro-header {

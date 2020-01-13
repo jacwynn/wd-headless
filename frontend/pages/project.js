@@ -1,67 +1,38 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Error from 'next/error';
-import WPAPI from 'wpapi';
 import Layout from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
 import Menu from '../components/Menu';
-import Config from '../config';
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
 
-class Project extends Component {
-  static async getInitialProps(context) {
-    const { slug, apiRoute } = context.query;
 
-    let apiMethod = wp.posts();
+const Project = props => {
 
-    switch (apiRoute) {
-      case 'category':
-        apiMethod = wp.categories();
-        break;
-      case 'page':
-        apiMethod = wp.pages();
-        break;
-      default:
-        break;
-    }
+  const [singleProject, setSingleProject] = useState()
+  const { headerMenu, query } = props;
 
-    const post = await apiMethod
-      .slug(slug)
-      .embed()
-      .then(data => {
-        return data[0];
-      });
+  useEffect(() => {
+    const PROJECT_URL = `https://wordpress-dot-jacwynn-site-263723.appspot.com/wp-json/wp/v2/project?slug=${query.slug}`
+    fetch(PROJECT_URL)
+      .then(response => response.json())
+      .then(response => {
+        setSingleProject(response)
+      })
+      .catch(error => alert(error.message));
+  }, []);
 
-    return { post };
-  }
 
-  render() {
-    const { post, headerMenu } = this.props;
-    if (!post.title) {
-      return <Error statusCode={404} />;
-    }
+  return(
+    <Layout>
+      <Menu menu={headerMenu} />
 
-    return (
-      <Layout>
-        <Menu menu={headerMenu} />
-        <h1>{post.title.rendered}</h1>
-        <div
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: post.content.rendered,
-          }}
-        />
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <h1>Testing the posts</h1>
-      </Layout>
-    );
-  }
+    </Layout>
+  )
 }
 
-export default PageWrapper(Project);
+Project.getInitialProps = async context => {
+    const query = context.query;
+  return { query }
+}
+
+export default PageWrapper(Project)

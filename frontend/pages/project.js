@@ -23,10 +23,11 @@ const Project = props => {
   return(
     <Layout>
       <Menu menu={headerMenu} />
+      {console.log(singleProject ? singleProject[0].acf.project_url : "loading.")}
       {singleProject ?
         <section className="intro-header-section intro-header-section__project">
           <h1>{singleProject ? singleProject[0].title.rendered : "Loading..."}</h1>
-          <button>Visit Website</button>
+          <a href={singleProject[0].acf.project_url} target="_blank"><button>Visit Website</button></a>
         </section>
       : "Spinner goes here"}
       {/* TODO::NEED TO ADD SPINNER FUNCTIONALITY */}

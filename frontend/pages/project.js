@@ -23,7 +23,6 @@ const Project = props => {
   return(
     <Layout>
       <Menu menu={headerMenu} />
-      {console.log(singleProject ? singleProject[0].acf.project_url : "loading.")}
       {singleProject ?
         <section className="intro-header-section intro-header-section__project">
           <h1>{singleProject ? singleProject[0].title.rendered : "Loading..."}</h1>
@@ -35,7 +34,7 @@ const Project = props => {
       {singleProject ?
         <section className="project-detail-section wrap">
           <div className="image">
-            <img src={singleProject[0].better_featured_image.media_details.sizes.medium_large.source_url} />
+            <img src={singleProject[0].acf.project_imac_image ? singleProject[0].acf.project_imac_image.url : ""} />
           </div>
           <div className="description">
             <div dangerouslySetInnerHTML={{ __html: singleProject[0].content.rendered }} />

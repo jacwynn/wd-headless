@@ -4,7 +4,7 @@ const Projects = ({projects}) => {
 
     const fprojects = projects.map((project, index) => {
         return (
-            <Link href={`/project/${project.slug}`}>
+            <Link as={`/project/${project.slug}`}>
                 <li key={index} className="project-link">
                     <img src={project.better_featured_image.source_url} />
                     <h4>{project.title.rendered}</h4>

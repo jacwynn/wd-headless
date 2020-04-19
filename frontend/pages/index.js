@@ -13,19 +13,19 @@ const Index = props => {
   const [projects, setProject] = useState([]);
 
 
-  Index.getInitialProps = async ctx => {
-      //create array map of urls
-      let urls = [
-        'https://wordpress-dot-jacwynn-site-263723.appspot.com/wp-json/wp/v2/project',
-        'https://wordpress-dot-jacwynn-site-263723.appspot.com/wp-json/wp/v2/posts?per_page=3'
-      ]
+  // Index.getInitialProps = async ctx => {
+  //     //create array map of urls
+  //     let urls = [
+  //       'https://wordpress-dot-jacwynn-site-263723.appspot.com/wp-json/wp/v2/project',
+  //       'https://wordpress-dot-jacwynn-site-263723.appspot.com/wp-json/wp/v2/posts?per_page=3'
+  //     ]
 
-      //pass that array of urls into promise.all (should return 1 object of data I need)
-      let requests = urls.map((url) => fetch(url));
+  //     //pass that array of urls into promise.all (should return 1 object of data I need)
+  //     let requests = urls.map((url) => fetch(url));
 
-      Promise.all(requests)
-        .then(responses => console.log(responses))
-  }
+  //     Promise.all(requests)
+  //       .then(responses => console.log(responses))
+  // }
 
   useEffect(() => {
     const PROJECTS_URL = 'https://wordpress-dot-jacwynn-site-263723.appspot.com/wp-json/wp/v2/project'

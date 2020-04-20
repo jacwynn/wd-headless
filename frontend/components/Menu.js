@@ -30,6 +30,12 @@ class Menu extends Component {
     })
   }
 
+  closeMenuOnClick = () => {
+    this.setState({
+      menuOpen: false
+    })
+  }
+
   render() {
     const { menu } = this.props;
     const { token, username } = this.state;
@@ -37,7 +43,7 @@ class Menu extends Component {
       if (item.object === 'custom') {
         return (
           <Link href={item.url} key={item.ID}>
-            <a>{item.title}</a>
+            <a onClick={this.closeMenuOnClick}>{item.title}</a>
           </Link>
         );
       }
@@ -49,7 +55,7 @@ class Menu extends Component {
           href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
           key={item.ID}
         >
-          <a>{item.title}</a>
+          <a onClick={this.closeMenuOnClick}>{item.title}</a>
         </Link>
       );
     });

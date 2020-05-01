@@ -1,59 +1,50 @@
-import React, { Component } from 'react';
-import Error from 'next/error';
-import WPAPI from 'wpapi';
+import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
 import Menu from '../components/Menu';
-import Config from '../config';
 
-const wp = new WPAPI({ endpoint: Config.apiUrl });
+const Post = props => {
 
-class Post extends Component {
-  static async getInitialProps(context) {
-    const { slug, apiRoute } = context.query;
+  const [detailedPost, setDetailedPost] = useState();
+  const { headerMenu, query } = props;
 
-    let apiMethod = wp.posts();
+  useEffect(() => {
+    const DETAILED_POST_URL = `https://wordpress-dot-jacwynn-site-263723.appspot.com/wp-json/wp/v2/posts?slug=${query.slug}`
+    fetch(DETAILED_POST_URL)
+      .then(response => response.json())
+      .then(response => {
+        setDetailedPost(response)
+      })
+      .catch(error => alert(error.message));
+  }, []);
 
-    switch (apiRoute) {
-      case 'category':
-        apiMethod = wp.categories();
-        break;
-      case 'page':
-        apiMethod = wp.pages();
-        break;
-      default:
-        break;
-    }
 
-    const post = await apiMethod
-      .slug(slug)
-      .embed()
-      .then(data => {
-        return data[0];
-      });
+  return(
+    <Layout>
+      <Menu menu={headerMenu} />
+      {detailedPost ? 
+        <section className="intro-header-section intro-header-section__post" style={{backgroundImage: `url(${detailedPost[0].better_featured_image.source_url})`}}>
+          <h1>{detailedPost[0].title.rendered}</h1>
+        </section>
+      : ""}
 
-    return { post };
-  }
+      {detailedPost ? 
+        <main>
+          <div dangerouslySetInnerHTML={{ __html: detailedPost[0].content.rendered }} />
+        </main>
+      : ""}
 
-  render() {
-    const { post, headerMenu } = this.props;
-    if (!post.title) {
-      return <Error statusCode={404} />;
-    }
+      <div>
+        
+      </div>
+      {console.log(detailedPost, 'detailed post')}
+    </Layout>
+  )
+}
 
-    return (
-      <Layout>
-        <Menu menu={headerMenu} />
-        <h1>{post.title.rendered}</h1>
-        <div
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: post.content.rendered,
-          }}
-        />
-      </Layout>
-    );
-  }
+Post.getInitialProps = async context => {
+  const query = context.query;
+  return { query }
 }
 
 export default PageWrapper(Post);

@@ -13,6 +13,7 @@ const Index = props => {
 
   const { headerMenu, data } = props;
   const projects = data[0];
+  const featuredPosts = data[1]
 
   return (
     <Layout>
@@ -20,7 +21,7 @@ const Index = props => {
       <IntroHeader />
       <Services />
       <Projects projects={projects} />
-      <FeaturedPosts />
+      <FeaturedPosts posts={featuredPosts} />
     </Layout>
   )
 }

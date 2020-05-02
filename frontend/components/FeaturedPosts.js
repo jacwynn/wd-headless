@@ -25,7 +25,7 @@ const FeaturedPost = ({posts}) => {
                     {fposts}
                 </div>
                 <div className="featured-post-link">
-                    <a href="#">See Older Posts</a>
+                    <a href="#">Go to Blog</a>
                 </div>
             </div>
         </section>

@@ -29,7 +29,7 @@ const Project = props => {
           <a href={singleProject[0].acf.project_url} target="_blank"><button>Visit Website</button></a>
         </section>
       : "Spinner goes here"}
-      {/* TODO::NEED TO ADD SPINNER FUNCTIONALITY */}
+      {/* TODO:NEED TO ADD SPINNER FUNCTIONALITY */}
 
       {singleProject ?
         <section className="project-detail-section wrap">

@@ -24,7 +24,10 @@ const Post = props => {
       <Menu menu={headerMenu} />
       {detailedPost ? 
         <section className="intro-header-section intro-header-section__post" style={{backgroundImage: `url(${detailedPost[0].better_featured_image.source_url})`}}>
-          <h1>{detailedPost[0].title.rendered}</h1>
+          <div className="intro-header-content-block">
+            <h1>{detailedPost[0].title.rendered}</h1>
+            <small>Published: {new Date(detailedPost[0].date).toLocaleDateString()}</small>
+          </div>
         </section>
       : ""}
 
@@ -35,7 +38,7 @@ const Post = props => {
       : ""}
 
       <div>
-        
+
       </div>
       {console.log(detailedPost, 'detailed post')}
     </Layout>

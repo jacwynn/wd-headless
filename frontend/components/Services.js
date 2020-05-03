@@ -28,7 +28,7 @@ const Services = () => (
         </div>
         </div> */}
         <hr />
-        <ul className="social-media-icons">
+        {/* <ul className="social-media-icons">
             <li>
                 <a href="https://www.facebook.com/jacquin.wynn.3" target="_blank" className="facebook"><i className="fa fa-facebook-square" aria-hidden="true"></i></a>
             </li>
@@ -44,7 +44,7 @@ const Services = () => (
             <li>
                 <a href="https://github.com/jacwynn" target="_blank" className="github"><i className="fa fa-github-square" aria-hidden="true"></i></a>
             </li>
-        </ul>
+        </ul> */}
     </section>
 )
 

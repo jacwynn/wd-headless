@@ -11,14 +11,24 @@ footer {
 
     a {
         flex: 1;
-        padding: 1rem;
+        padding: 1rem 0;
         font-size: 0.75rem;
         color: white;
+        width: 100%;
         text-transform: uppercase;
         border: 1px solid white;
         &:hover {
             color: $wd-accent-color-1;
         }
+
+        @media screen and (max-width: 540px) {
+            border: none;
+            border-bottom: 1px solid white;
+        }
+    }
+
+    @media screen and (max-width: 540px) {
+        flex-direction: column;
     }
 }
 

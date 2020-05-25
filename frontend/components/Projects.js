@@ -6,7 +6,7 @@ const Projects = ({projects}) => {
         return (
             <Link href={`/project/${project.slug}`}>
                 <li key={index} className="project-link">
-                    <img src={project.better_featured_image.source_url} />
+                    <img src={project.better_featured_image.media_details.sizes.medium_large.source_url} />
                     <h4>{project.title.rendered}</h4>
                 </li>
             </Link>

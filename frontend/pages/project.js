@@ -34,7 +34,7 @@ const Project = props => {
       {singleProject ?
         <section className="project-detail-section wrap">
           <div className="image">
-            <img src={singleProject[0].acf.project_imac_image ? singleProject[0].acf.project_imac_image.url : ""} />
+            <img src={singleProject[0].acf.project_imac_image ? singleProject[0].acf.project_imac_image.sizes.medium_large : ""} />
           </div>
           <div className="description">
             <div dangerouslySetInnerHTML={{ __html: singleProject[0].content.rendered }} />

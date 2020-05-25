@@ -4,7 +4,7 @@ const FeaturedPost = ({posts}) => {
         return (
             <div className="featured-post-article">
                 <a href={`/post/${post.slug}`}>
-                    <div className="featured-post-image" style={{backgroundImage: `url(${post.better_featured_image.source_url})`}}></div>
+                    <div className="featured-post-image" style={{backgroundImage: `url(${post.better_featured_image.media_details.sizes.medium_large.source_url})`}}></div>
                     <div className="featured-post-content">
                         <h3 className="featured-post-title">{post.title.rendered}</h3>
                         <h5>{new Date(post.date).toLocaleDateString()}</h5>

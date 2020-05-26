@@ -22,25 +22,26 @@ const Post = props => {
   return(
     <Layout>
       <Menu menu={headerMenu} />
-      {detailedPost ? 
-        <section className="intro-header-section intro-header-section__post" style={{backgroundImage: `url(${detailedPost[0].better_featured_image.source_url})`}}>
-          <div className="intro-header-content-block">
-            <h1>{detailedPost[0].title.rendered}</h1>
-            <small>Published: {new Date(detailedPost[0].date).toLocaleDateString()}</small>
-          </div>
-        </section>
-      : ""}
 
       {detailedPost ? 
-        <main>
-          <div dangerouslySetInnerHTML={{ __html: detailedPost[0].content.rendered }} />
-        </main>
-      : ""}
+        <>
+          <section className="intro-header-section intro-header-section__post" style={{backgroundImage: `url(${detailedPost[0].better_featured_image.source_url})`}}>
+            <div className="intro-header-content-block">
+              <h1>{detailedPost[0].title.rendered}</h1>
+              <small>Published: {new Date(detailedPost[0].date).toLocaleDateString()}</small>
+            </div>
+          </section>
 
-      <div>
-
-      </div>
-      {console.log(detailedPost, 'detailed post')}
+          <main>
+            <div dangerouslySetInnerHTML={{ __html: detailedPost[0].content.rendered }} />
+          </main>
+        </>
+      : 
+      <div className="loader-container">
+        <div class="loader">
+            Loading...
+        </div>
+      </div>}
     </Layout>
   )
 }

@@ -24,23 +24,26 @@ const Project = props => {
     <Layout>
       <Menu menu={headerMenu} />
       {singleProject ?
-        <section className="intro-header-section intro-header-section__project">
-          <h1>{singleProject ? singleProject[0].title.rendered : "Loading..."}</h1>
-          <a href={singleProject[0].acf.project_url} target="_blank"><button>Visit Website</button></a>
-        </section>
-      : "Spinner goes here"}
-      {/* TODO:NEED TO ADD SPINNER FUNCTIONALITY */}
+        <>
+          <section className="intro-header-section intro-header-section__project">
+            <h1>{singleProject[0].title.rendered}</h1>
+            <a href={singleProject[0].acf.project_url} target="_blank"><button>Visit Website</button></a>
+          </section>
 
-      {singleProject ?
-        <section className="project-detail-section wrap">
-          <div className="image">
-            <img src={singleProject[0].acf.project_imac_image ? singleProject[0].acf.project_imac_image.sizes.medium_large : ""} />
-          </div>
-          <div className="description">
-            <div dangerouslySetInnerHTML={{ __html: singleProject[0].content.rendered }} />
-          </div>
-        </section>
-      : ""}
+          <section className="project-detail-section wrap">
+            <div className="image">
+              <img src={singleProject[0].acf.project_imac_image.sizes.medium_large} />
+            </div>
+            <div className="description">
+              <div dangerouslySetInnerHTML={{ __html: singleProject[0].content.rendered }} />
+            </div>
+          </section>
+        </> :
+      <div className="loader-container">
+        <div class="loader">
+            Loading...
+        </div>
+      </div> }
     </Layout>
   )
 }
